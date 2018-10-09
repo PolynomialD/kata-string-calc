@@ -1,4 +1,5 @@
 const StringCalc = require('../src/StringCalc')
+const Gen = require('verify-it').Gen
 
 describe('StringCalc', () => {
   verify.it('An empty string returns zero', () => {
@@ -6,10 +7,9 @@ describe('StringCalc', () => {
     stringCalc.add('').should.eql(0)
   })
 
-  verify.it('A single number returns the value', () => {
+  verify.it('A single number returns the value', Gen.integer, (num) => {
     const stringCalc = new StringCalc()
-    stringCalc.add(1).should.eql(1)
-
+    stringCalc.add(num).should.eql(num)
   })
-
+  
 })
