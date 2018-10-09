@@ -1,6 +1,24 @@
 const StringCalc = require('../src/StringCalc')
 const Gen = require('verify-it').Gen
 
+// const randomNumber = Math.floor((Math.random() * 100000000) * (Math.random())).toString(10)
+
+// const randomDelimitedNumber = () => {
+//   let delim = randomNumber.split('').join(',')
+//   return delim
+//   console.log('delimitedNumber: ', delim)
+// }
+
+// const total = () => {
+//   let number = randomNumber.split('').map(Number)
+//   let total = number.reduce((a, b) => {return a+b})
+//   return total
+//   console.log('total: ', total)
+// }
+
+// randomDelimitedNumber()
+// total()
+
 describe('StringCalc', () => {
   verify.it('An empty string returns zero', () => {
     const stringCalc = new StringCalc()
@@ -14,7 +32,7 @@ describe('StringCalc', () => {
 
   verify.it('Two numbers, comma delimited, returns the sum', () => {
     const stringCalc = new StringCalc()
-    stringCalc.add('10,20,30').should.eql(60)
+    stringCalc.add('20,30').should.eql(50)
   })
 
 })
