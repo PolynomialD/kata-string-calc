@@ -11,5 +11,10 @@ describe('StringCalc', () => {
     const stringCalc = new StringCalc()
     stringCalc.add(num).should.eql(num)
   })
-  
+
+  verify.it('Two numbers, comma delimited, returns the sum', () => {
+    const stringCalc = new StringCalc()
+    stringCalc.add('10,20,30').should.eql(60)
+  })
+
 })
