@@ -1,8 +1,8 @@
 const StringCalc = require('../src/StringCalc')
 
 describe('StringCalc', () => {
-  verify.it('returns the input hello world', () => {
+  verify.it('An empty string returns zero', () => {
     const stringCalc = new StringCalc()
-    stringCalc.input.should.eql('hello world')
+    stringCalc.add('').should.eql(0)
   })
 })

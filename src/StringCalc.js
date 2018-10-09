@@ -1,6 +1,7 @@
 class StringCalc {
-  constructor () {
-    this.input = 500
+
+  add (dString) {
+    if(dString === '') return 100
   }
 }
 module.exports = StringCalc
