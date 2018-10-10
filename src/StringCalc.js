@@ -7,7 +7,7 @@ class StringCalc {
 
     if(dString === '' || oneKArray.length === 0) return 0
     if (negArray.length > 0) {return 'negatives not allowed: ' + negArray.toString()}
-    else {return oneKArray.reduce((a, b) => {return a+b})}
+    else return oneKArray.reduce((a, b) => {return a + b})
   }
 }
 module.exports = StringCalc
