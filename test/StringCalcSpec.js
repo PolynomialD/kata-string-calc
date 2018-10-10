@@ -42,4 +42,9 @@ describe('StringCalc', () => {
     stringCalc.add('2\n4').should.eql(6)
   })
 
+  verify.it('Three numbers, delimited either way, returns the sum', () => {
+    const stringCalc = new StringCalc()
+    stringCalc.add('1\n2,3\n4').should.eql(10)
+  })
+
 })
