@@ -34,4 +34,10 @@ describe('StringCalc', () => {
     stringCalc.add('-1,2,-3').should.eql('negatives not allowed: -1,-3')
   })
 
+  verify.it('Numbers greater than 1000 are ignored', Gen.integerBetween(1000,9999999), (randomInt) => {
+    const stringCalc = new StringCalc()
+    randomInt = randomInt.toString()
+    stringCalc.add(randomInt).should.eql(0)
+  })
+
 })
