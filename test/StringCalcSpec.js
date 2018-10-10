@@ -39,4 +39,9 @@ describe('StringCalc', () => {
     stringCalc.add(randomInt).should.eql(0)
   })
 
+  verify.it('A single char delimiter can be defined on the first line', () => {
+    const stringCalc = new StringCalc()
+    stringCalc.add('//#\n8#4').should.eql(12)
+  })
+
 })
