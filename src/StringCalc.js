@@ -1,14 +1,18 @@
 class StringCalc {
 
   add (dString) {
-
-    console.log('dString: ', dString)
-    let array = dString.split(',').map(Number)
-    console.log('array: ', array)
-    let total = array.reduce((a, b) => {return a+b})
-    console.log('total: ', total)
+    let array = []
     if(dString === '') return 0
-    else return total
+    if (dString.includes(',')){
+      array = dString.split(',').map(Number)
+      return array.reduce((a, b) => {return a+b})
+    }
+    if (dString.includes('\n')){
+      array = dString.split('\n').map(Number)
+      return array.reduce((a, b) => {return a+b})
+    } else {
+        return parseInt(dString)
+      }
   }
 }
 module.exports = StringCalc
