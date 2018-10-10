@@ -16,8 +16,9 @@ const Gen = require('verify-it').Gen
 //   console.log('total: ', total)
 // }
 
-// randomDelimitedNumber()
-// total()
+// const getRandomInt = (max) => {
+//   return Math.floor(Math.random() * Math.floor(max))
+// }
 
 describe('StringCalc', () => {
   verify.it('An empty string returns zero', () => {
@@ -25,9 +26,10 @@ describe('StringCalc', () => {
     stringCalc.add('').should.eql(0)
   })
 
-  verify.it('A single number returns the value', Gen.integer, (num) => {
+  verify.it('A single number returns the value', Gen.integer, (randomInt) => {
     const stringCalc = new StringCalc()
-    stringCalc.add(num).should.eql(num)
+    let stringInt = randomInt.toString()
+    stringCalc.add(stringInt).should.eql(randomInt)
   })
 
   verify.it('Two numbers, comma delimited, returns the sum', () => {
