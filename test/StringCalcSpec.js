@@ -37,4 +37,9 @@ describe('StringCalc', () => {
     stringCalc.add('20,30').should.eql(50)
   })
 
+  verify.it('Two numbers, newline delimited, returns the sum', () => {
+    const stringCalc = new StringCalc()
+    stringCalc.add('2\n4').should.eql(6)
+  })
+
 })
