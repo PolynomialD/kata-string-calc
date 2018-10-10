@@ -9,6 +9,7 @@ describe('StringCalc', () => {
 
   verify.it('A single number returns the value', Gen.integer, (randomInt) => {
     const stringCalc = new StringCalc()
+    randomInt = Math.abs(randomInt)
     let stringInt = randomInt.toString()
     stringCalc.add(stringInt).should.eql(randomInt)
   })
