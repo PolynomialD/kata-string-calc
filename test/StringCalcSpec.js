@@ -47,4 +47,9 @@ describe('StringCalc', () => {
     stringCalc.add('1\n2,3\n4').should.eql(10)
   })
 
+  verify.it('Negative numbers throw an exception with the message', () => {
+    const stringCalc = new StringCalc()
+    stringCalc.add('-1,2,-3').should.eql('negatives not allowed: -1,-3')
+  })
+
 })
