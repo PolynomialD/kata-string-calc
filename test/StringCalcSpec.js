@@ -7,9 +7,8 @@ describe('StringCalc', () => {
     stringCalc.add('').should.eql(0)
   })
 
-  verify.it('A single number returns the value', Gen.integer, (randomInt) => {
+  verify.it('A single number returns the value', Gen.integerBetween(0,1000), (randomInt) => {
     const stringCalc = new StringCalc()
-    randomInt = Math.abs(randomInt)
     let stringInt = randomInt.toString()
     stringCalc.add(stringInt).should.eql(randomInt)
   })
@@ -34,7 +33,7 @@ describe('StringCalc', () => {
     stringCalc.add('-1,2,-3').should.eql('negatives not allowed: -1,-3')
   })
 
-  verify.it('Numbers greater than 1000 are ignored', Gen.integerBetween(1000,9999999), (randomInt) => {
+  verify.it('Numbers greater than 1000 are ignored', Gen.integerBetween(1001,9999999), (randomInt) => {
     const stringCalc = new StringCalc()
     randomInt = randomInt.toString()
     stringCalc.add(randomInt).should.eql(0)
