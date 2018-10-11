@@ -3,9 +3,8 @@ class StringCalc {
   add (dString) {
     let array = dString.split('\n').join().split(',')
     let negArray = array.filter(value => value < 0)
-    let newDelimString = dString.substring(0,2)
 
-    if(newDelimString === '//') {
+    if(dString.substring(0,2) === '//') {
       let newDelim = []
       for(let i=2; isNaN(dString[i]); i++) {
         if (isNaN(dString[i])) {newDelim.push(dString[i])}
@@ -26,4 +25,3 @@ class StringCalc {
   }
 }
 module.exports = StringCalc
-
