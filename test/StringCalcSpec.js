@@ -44,4 +44,9 @@ describe('StringCalc', () => {
     stringCalc.add('//#\n8#4').should.eql(12)
   })
 
+  verify.it('A multi char delimiter can be defined on the first line', () => {
+    const stringCalc = new StringCalc()
+    stringCalc.add('//###\n5###9').should.eql(14)
+  })
+
 })

@@ -6,9 +6,13 @@ class StringCalc {
     let newDelimString = dString.substring(0,2)
 
     if(newDelimString === '//') {
-      let newDelim = dString[2]
-      array.splice(0,1).join()
-      array = array.join().split(newDelim)
+      let newDelim = []
+      for(let i=2; isNaN(dString[i]); i++) {
+        if (isNaN(dString[i])) {newDelim.push(dString[i])}
+      }
+      newDelim = newDelim.join('')
+      array.splice(0,1)
+      array = array.join(',').split(newDelim)
     }
     array = array.map(Number)
     let oneKArray = array.filter(value => value < 1001, 0)
@@ -22,3 +26,4 @@ class StringCalc {
   }
 }
 module.exports = StringCalc
+
