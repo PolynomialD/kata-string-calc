@@ -1,5 +1,6 @@
 const StringCalc = require('../src/StringCalc')
 const Gen = require('verify-it').Gen
+const expect = require('chai').expect
 
 describe('StringCalc', () => {
   verify.it('An empty string returns zero', () => {
@@ -30,8 +31,7 @@ describe('StringCalc', () => {
 
   verify.it('Negative numbers throw an exception with the message', () => {
     const stringCalc = new StringCalc()
-    let error = new TypeError('negatives not allowed: -1,-3')
-    stringCalc.add('-1,2,-3').should.throw(error)
+    expect(stringCalc.add('-1,2,-3')).to.throw()
   })
 
   verify.it('Numbers greater than 1000 are ignored', Gen.integerBetween(1001,9999999), (randomInt) => {
