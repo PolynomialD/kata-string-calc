@@ -30,9 +30,8 @@ describe('StringCalc', () => {
 
   verify.it('Negative numbers throw an exception with the message', () => {
     const stringCalc = new StringCalc()
-    const errorString = stringCalc.add('-1,2,-3')
-    console.log(errorString)
-    expect(errorString).to.throw()
+    let error = new TypeError('negatives not allowed: -1,-3')
+    stringCalc.add('-1,2,-3').should.throw(error)
   })
 
   verify.it('Numbers greater than 1000 are ignored', Gen.integerBetween(1001,9999999), (randomInt) => {
